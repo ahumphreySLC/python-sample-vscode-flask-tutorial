@@ -6,8 +6,7 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'macos-latest'
+
 strategy:
   matrix:
     Python27:
@@ -18,6 +17,9 @@ strategy:
       python.version: '3.6'
     Python37:
       python.version: '3.7'
+
+pool:
+  vmImage: $(imageName)
 
 steps:
 - task: UsePythonVersion@0
